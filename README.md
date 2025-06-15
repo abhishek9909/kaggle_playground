@@ -1,13 +1,32 @@
 ## Rough Plan:
-- v0:
-    - contains various types of EDA.
-    - contains different approaches to solve the problem 
-        - i) xgboost with as is without much thought.
-        - ii) 'T' binary classifiers, each with it's own xgboost.
-        - iii) incorporating original data in the training data in particular.
-        - iv) T binary classifiers with original data incorporated as well.
+- v0 contains:
+    -> simple EDA for features - univariate and bivariate.
+    -> two models trained with both equally distributed and stratified datasets.
+    -> classification report for the observations.
+    -> a N-numeric one-vs-all approach towards classification.
 
-- v1 (will contain):
-    - understanding feature importance for each type of prediction and optimizing it.
-    - perform feature engineering based on domain knowledge and expected inputs.
-    - looking at training curves and making correct judgements for hyperparameters.
+- v1 will contain:
+    - Feature importance based on model predictions.
+        - Existing model
+            - plot feature importance. :: embedded methods.
+            - plot the decision boundaries.
+                - see if they are linear / non-linear; if non-linear, we must use SVM as the decision maker/estimator in the feature importance methods.
+        - Ablate features;
+            - Recursive feature elimination; in this method, use a logistic regression model to check which features are most important.
+            - Feature permutation importance;
+            - Sequential feature selection; 
+    - Providing mathematical confidence interval for different settings of classifiers:
+        - Multi-class classifier.
+        - One vs. all classifiers.
+        - n*(n-1)/2 one vs. one classifiers.;;
+        with justification for which model should have best generalization performance considering the metric.
+    - Perform more exploratory feature engineering using structured techniques.
+    - Model and hyperparameter selection based on structured approach.
+        - loss curves.
+        - search based on heuristic logarithmic varying inputs.
+    - Model evaluation and selection based on metrics
+        - classification report.
+        - ROC curves.
+        - statisitical tests - mcnemar's report.
+    - Final model submission.
+        - trained on the entire set with same set of hyperparameters.
