@@ -8,13 +8,13 @@
 - v1 will contain:
     - Feature importance based on model predictions.
         - Existing model
-            - plot feature importance. :: embedded methods.
-            - plot the decision boundaries.
-                - see if they are linear / non-linear; if non-linear, we must use SVM as the decision maker/estimator in the feature importance methods.
+            - plot feature importance using that xgboost model. :: embedded methods.
         - Ablate features;
             - Recursive feature elimination; in this method, use a logistic regression model to check which features are most important.
-            - Feature permutation importance;
-            - Sequential feature selection; 
+                - Don't do feature engineering for now.
+            - Feature permutation importance; use THE random forest classifier for this purpose - exactly as mentioned by seb. in the lectures.
+                - 70-30 split for permutation.
+                - adding a random feature and plotting each feature with that as well.
     - Providing mathematical confidence interval for different settings of classifiers:
         - Multi-class classifier.
         - One vs. all classifiers.
